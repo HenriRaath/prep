@@ -19,7 +19,7 @@ namespace prep.specs
                     iMatchA2 = depends.on<IMatchA<int>>();
 
                     iMatchA1.setup(x => x.matches(1)).Return(true);
-                    iMatchA2.setup(x => x.matches(2)).Return(true);
+                    iMatchA2.setup(x => x.matches(2)).Return(true); 
                 };
 
             private class and_neither_matches
