@@ -8,7 +8,7 @@ namespace prep.calculator
 {
   public class Calculator
   {
-    IDbConnection connection;
+      readonly IDbConnection connection;
 
     public Calculator(IDbConnection connection, int offset, int offset2)
     {
@@ -32,8 +32,9 @@ namespace prep.calculator
 
     public void shut_off()
     {
-         if (!Thread.CurrentPrincipal.IsInRole("kj"))
-            throw new SecurityException();
+        if (Thread.CurrentPrincipal.IsInRole("kj")) return;
+
+        throw new SecurityException();
     }
   }
 }
