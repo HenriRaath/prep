@@ -18,6 +18,7 @@ namespace prep.calculator
                 throw new ArgumentException();
 
             connection.Open();
+            connection.CreateCommand().ExecuteNonQuery();
 
             return i + i1;
         }
